@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>毕达哥拉斯树</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+                <!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">回到主页</a>
+					</header>
+				
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">主页</a></li>
+                            <li class="active"><a href="tree.html">毕达哥拉斯树</a></li>
+							<li><a href="randomwalk.html">随机行走</a></li>
+                            <li><a href="gasdiffusion.html">气体扩散</a></li>
+                            <li><a href="dla.html">扩散限制凝聚</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									
+									<h1>毕达哥拉斯树<br />
+									fractual tree</h1>
+									<p>通常来说，我们把一个可以分成几个部分且每一个部分都可以被看作是整体的缩小版的几何图形称为分形。
+                                        DLA模型就是分形的典型例子。为了对分形的概念有一个基本的认识，我们可以先看一个简单的例子。</p>
+                                    <p>这是一棵分形树，每一根枝杈生长到上一根长度的某一比例（例如0.618）时会停止，方向旋转一个角度后进行下一枝杈的生长。
+                                        如此过程迭代进行可以生成如图所示的分形树，每一个小的枝杈都可以视作整棵树的缩小版，即满足分形要求。</p>
+                                    
+								</header>
+								
+							
+                                <div class="p5" id="tree">
+                                    
+                                </div>
+                                <br/><p>移动两个滑块，可以分别观察枝杈转动角度和树枝长度对于分形树外观的影响。</p>
+				
+                        
+							</section>
+			</div>
+
+
+			<!-- Copyright -->
+				<div id="copyright">
+					<ul><li>Powered by Mingyi Shao, Sijia Wang</li></ul>
+				</div>
+
+		
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+            <script src="assets/js/gas1.js"></script>
+            <script src="assets/js/p5.sound.min.js"></script>
+            <script src="assets/js/sketchtree.js"></script>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+	</body>

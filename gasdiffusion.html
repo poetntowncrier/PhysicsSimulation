@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>气体扩散</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+                <!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">回到主页</a>
+					</header>
+				
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">主页</a></li>
+                            <li><a href="tree.html">毕达哥拉斯树</a></li>
+							<li><a href="randomwalk.html">随机行走</a></li>
+                            <li class="active"><a href="gasdiffusion.html">气体扩散</a></li>
+                            <li><a href="dla.html">扩散限制凝聚</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									
+									<h1>气体扩散<br />
+									Gas Diffusion</h1>
+									<p>扩散是由于微粒（分子、原子等）的热运动而产生的物质迁移现象, 可由一种或多种物质在气、液或固相的同一相内或不同相间进行。</p>
+                                    
+								</header>
+								<div class="image fit"><img style="display: block;
+                                    margin-left: 4rem;
+                                    margin-right: 4rem;
+                                    width: 80%;" src="images/pic04.jpg" alt="" />
+                                </div>
+								<p> 1848年，苏格兰化学家托马斯·格雷姆提出了格雷姆定律，又称为格雷姆扩散定律(Graham's Laws of Diffusion & Effusion)。
+                                    其形式为: <br/>
+                                    \[{Rate\;of\;A \over Rate\;of\;B} = {\sqrt{M_{B}} \over \sqrt{M_{A}}}\]
+                                    其中，Rate&nbspof&nbspA和Rate&nbspof&nbspA分别为气体A和气体B的扩散速率，M<sub>A</sub>和M<sub>B</sub>分别为两种气体的分子质量。
+                                    这说明，在定温定压下，气体的扩散速率与其气体微粒质量的平方根成反比。即气体愈重，则扩散的速率愈慢。
+                                    同时，格雷姆也发现，气体的隙流与扩散情况相当，因此气体的隙流速率也可用相同的公式描述。
+                                </p>
+								<p>扩散的一个显著特点是，它取决于粒子的随机行走。以下是对两种不同气体扩散情况比较的模拟：</p>
+                                
+                                <div>        
+                                    <label for="gas1">选择气体A:</label>
+
+                                    <select name="gas" id="gas1" onchange="getSelectValue();">
+                                    <option value=2>氢气(2)</option>
+                                    <option value=4>氦气(4)</option>
+                                    <option value=17>氨气(17)</option>
+                                    <option value=28>氮气(28)</option>
+                                    <option value=28>二氧化碳(28)</option>
+                                    <option value=30>一氧化氮(30)</option>
+                                    <option value=32>氧气(32)</option>
+                                    <option value=34>硫化氢(34)</option>
+                                    <option value=64>二氧化硫(64)</option>
+                                    </select>
+
+                                    <label for="gas">选择气体B:</label>
+
+                                    <select name="gas" id="gas2" onchange="getSelectValue();">
+                                    <option value=2>氢气(2)</option>
+                                    <option value=4>氦气(4)</option>
+                                    <option value=17>氨气(17)</option>
+                                    <option value=28>氮气(28)</option>
+                                    <option value=28>二氧化碳(28)</option>
+                                    <option value=30>一氧化氮(30)</option>
+                                    <option value=32>氧气(32)</option>
+                                    <option value=34>硫化氢(34)</option>
+                                    <option value=64>二氧化硫(64)</option>
+                                    </select>
+                            </div>
+                            
+                                <button style="margin:2rem;" type="button" id="startwalk" onclick="gsdf1.start();gsdf2.start()">开始</button>
+                                <button type="button" id="resetwalk" onclick="gsdf1.resetwalk();gsdf2.resetwalk()">清零</button>
+
+
+                                <div class="p5" id="gwalk1">
+                                    <p><b>气体A</b><br />
+                                    模拟说明:<br />
+                                    1. 在上方[气体A]中选择模拟的气体, 括号中为气体分子的相对原子质量;<br />
+                                    2. 按下键盘'p'键暂停随机行走, 按下键盘's'键继续随机行走;<br />
+                                    3. 从(0,0)点开始行走, 四个方向行走的概率相同, 鼠标点击可以重新选择行走位置;<br />
+                                    4. 若行走至已经走过的点, 则点变为红色;<br />
+                                    4. 点击[开始]按钮开始, 点击[清零]按钮清零;
+                                    </p>
+                                </div>
+
+                                <div class="p5" id="gwalk2">
+                                    <p><b>气体B</b><br />
+                                    模拟说明:<br />
+                                    1. 在上方[气体A]中选择模拟的气体, 括号中为气体分子的相对原子质量;<br />
+                                    2. 按下键盘'p'键暂停随机行走, 按下键盘's'键继续随机行走;<br />
+                                    3. 从(0,0)点开始行走, 四个方向行走的概率相同, 鼠标点击可以重新选择行走位置;<br />
+                                    4. 若行走至已经走过的点, 则点变为红色;<br />
+                                    4. 点击[开始]按钮开始, 点击[清零]按钮清零;
+                                    </p>
+                                </div>
+				
+                        
+							</section>
+			</div>
+
+
+			<!-- Copyright -->
+				<div id="copyright">
+					<ul><li>Powered by Mingyi Shao, Sijia Wang</li></ul>
+				</div>
+
+		
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+            <script src="assets/js/gas1.js"></script>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+	</body>
+</html>

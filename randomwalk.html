@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>随机行走</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js"></script>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+                <!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">回到主页</a>
+					</header>
+				
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">主页</a></li>
+                            <li><a href="tree.html">毕达哥拉斯树</a></li>
+							<li class="active"><a href="generic.html">随机行走</a></li>
+                            <li><a href="gasdiffusion.html">气体扩散</a></li>
+                            <li><a href="dla.html">扩散限制凝聚</a></li>
+							
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									
+									<h1>随机行走<br />
+									Random Walk</h1>
+									<p>随机行走是一个随机过程，描述了由一些数学空间上的随机步骤连续组成的路径。<br />任何无规则行走都各自对应着一个扩散运输定律。</p>
+                                    
+								</header>
+								<div class="image fit"><img style="display: block;
+                                    margin-left: 4rem;
+                                    margin-right: 4rem;
+                                    width: 80%;" src="images/pic03.jpg" alt="" />
+                                </div>
+								<p> <br />随机行走于1905年由卡尔·皮尔逊首次提出，是一种数学统计模型，由一连串的轨迹所组成，其中每一次都是随机的。
+									随机游走在各个领域有许多应用，包括生态学，心理学，计算机科学，物理，化学，生物学以及经济学。在数学中，我们可以利用随机游走来估算π的值。
+									此外，它还可以用来模拟分子在液体或气体中传播时的路径，觅食动物的搜索路径，波动的股票价格和赌徒的财务状况。
+								</p>
+
+                                
+                            
+                                <button type="button" id="startwalk" onclick="myp5.start()">开始</button>
+                                <button type="button" id="resetwalk" onclick="myp5.resetwalk()">清零</button>
+                                
+                                    <div class="p5" id="rwalk">
+										
+                                        <p>模拟说明：<br />
+                                        1. 按下键盘'p'键暂停随机行走，按下键盘's'键继续随机行走;<br />
+                                        2. 从(0,0)点开始行走，四个方向行走的概率相同，鼠标点击可以重新选择行走位置;<br />
+                                        3. 若行走至已经走过的点，则点变为红色;<br />
+                                        4. 点击[开始]按钮开始，点击[清零]按钮清零;
+                                        </p>
+                                        </div>
+							</section>
+
+			</div>
+
+			<!-- Copyright -->
+            <div id="copyright">
+                <ul><li>Powered by Mingyi Shao, Sijia Wang</li></ul>
+            </div>            
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+            <script src="assets/js/random.js"></script>
+
+	</body>
+</html>
